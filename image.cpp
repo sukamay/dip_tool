@@ -2,41 +2,32 @@
 
 using namespace cv;
 
-Image::Image() {
-
-}
-
-Image::Image(string file_name) {
-    img = imread(file_name);
-}
-
-ERROR_CODE Image::SetImg(string file_name) {
-    img = imread(file_name);
-    if (img.empty()) {
+ERROR_CODE LoadImg(string file_name, Mat &mat) {
+    mat = imread(file_name);
+    if (mat.empty()) {
         return IMG_LOAD_FAILED;
     }
     return OK;
 }
 
-ERROR_CODE Image::SetImg(Mat &mat) {
-    mat.copyTo(img);
-    return OK;
-}
-
-ERROR_CODE Image::Dilate(Mat &output_mat, DilateParams &params) {
-    if (img.empty()) {
+ERROR_CODE Dilate(const Mat &input_mat, Mat &output_mat, DilateParams &params) {
+    if (input_mat.empty()) {
         return INPUT_INVALID;
     }
     Mat kernel = getStructuringElement(params.morph_shape, Size(params.kernel_size, params.kernel_size));
-    dilate(img, output_mat, kernel);
+    dilate(input_mat, output_mat, kernel);
     return OK;
 }
 
-ERROR_CODE Image::Erode(Mat &output_mat, ErodeParams &params) {
-    if (img.empty()) {
+ERROR_CODE Erode(const Mat &input_mat, Mat &output_mat, ErodeParams &params) {
+    if (input_mat.empty()) {
         return INPUT_INVALID;
     }
     Mat kernel = getStructuringElement(params.morph_shape, Size(params.kernel_size, params.kernel_size));
-    erode(img, output_mat, kernel);
+    erode(input_mat, output_mat, kernel);
+    return OK;
+}
+
+ERROR_CODE GetHist(const Mat &input_mat, Mat &output_mat) {
     return OK;
 }

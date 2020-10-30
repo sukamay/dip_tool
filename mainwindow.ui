@@ -33,8 +33,7 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: black;
-color: white;</string>
+       <string notr="true">background-color: white;</string>
       </property>
       <property name="text">
        <string>input</string>
@@ -50,9 +49,7 @@ color: white;</string>
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: black;
-color: white;
-text-align: middle;</string>
+       <string notr="true">background-color: white;</string>
       </property>
       <property name="text">
        <string>output</string>
@@ -70,6 +67,33 @@ text-align: middle;</string>
       <property name="currentIndex">
        <number>0</number>
       </property>
+      <widget class="QWidget" name="tab_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>basic</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item alignment="Qt::AlignTop">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>show histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string>show gray img</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Morphology</string>
@@ -160,11 +184,6 @@ text-align: middle;</string>
          </widget>
         </item>
        </layout>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>Tab 2</string>
-       </attribute>
       </widget>
      </widget>
     </item>

@@ -14,19 +14,9 @@
 using std::string;
 using namespace cv;
 
-class Image
-{
-public:
-    Image();
-    Image(string file_name);
-    inline const Mat& GetImg() { return img; }
-    ERROR_CODE SetImg(string file_name);
-    ERROR_CODE SetImg(Mat &mat);
-    ERROR_CODE Dilate(Mat &output_mat, DilateParams &params);
-    ERROR_CODE Erode(Mat &output_mat, ErodeParams &params);
-
-private:
-    Mat img;
-};
+ERROR_CODE LoadImg(string file_name, Mat &mat);
+ERROR_CODE Dilate(const Mat &input_mat, Mat &output_mat, DilateParams &params);
+ERROR_CODE Erode(const Mat &input_mat, Mat &output_mat, ErodeParams &params);
+ERROR_CODE GetHist(const Mat &input_mat, Mat &output_mat);
 
 #endif // IMAGE_H
