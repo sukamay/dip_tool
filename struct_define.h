@@ -13,4 +13,26 @@ struct ErodeParams {
     int morph_shape;
 };
 
+struct GaussianFilterParams {
+    int kernel_x;
+    int kernel_y;
+    double sigma;
+};
+
+struct MeanFilterParams {
+    int kernel_x;
+    int kernel_y;
+};
+
+struct MedianFilterParams {
+    int kernel_size;
+    double sigma;
+};
+
+struct BilateralFilterParams {
+    int diameter;
+    double sigma_color;
+    double sigma_space;
+};
+
 #endif // STRUCT_DEFINE_H
